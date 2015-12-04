@@ -47,13 +47,13 @@ var init = function(){
     app.get('/auth/vkontakte',
         passport.authenticate('vkontakte'),
         function(req, res){
-           console.log(res);
+           //console.log(res);
         });
 
     app.get('/auth/vkontakte/callback',
         passport.authenticate('vkontakte', { failureRedirect: '/login' }),
         function(req, res) {
-            console.log(res);
+            console.log(res.name);
             res.redirect('/');
         });
 
