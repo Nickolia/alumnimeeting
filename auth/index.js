@@ -15,11 +15,11 @@ passport.use('vkontakte', new AuthVKStrategy({
             if (err) throw err;
             if (!profiles_data){
                 var newProfile = new Profile({
-                    firstName: profiles_data.name.givenName,
-                    lastName: profiles_data.name.familyName,
-                    userId: profiles_data.id,
-                    photoUrl: profiles_data.photos[0].value,
-                    profileUrl: profiles_data.profileUrl
+                    firstName: profile.name.givenName,
+                    lastName: profile.name.familyName,
+                    userId: profile.id,
+                    photoUrl: profile.photos[0].value,
+                    profileUrl: profile.profileUrl
                 });
                 newProfile.save(function(err,profiles) {
                     if (err) throw err;
