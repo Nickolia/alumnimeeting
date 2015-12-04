@@ -46,4 +46,17 @@ passport.deserializeUser(function (data, done) {
 });
 
 module.exports = function (app) {
+
+    app.get('/auth/vkontakte',
+        passport.authenticate('vkontakte'),
+        function(req, res){
+            //console.log(res);
+        });
+
+    app.get('/auth/vkontakte/callback',
+        passport.authenticate('vkontakte', { failureRedirect: '/login' }),
+        function(req, res) {
+            console.log(res.req.user);
+            res.redirect('/');
+        });
 };
