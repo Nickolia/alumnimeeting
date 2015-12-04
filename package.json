@@ -24,6 +24,8 @@
     "bson-objectid": "*",
     "cron": "*",
     "cors": "*",
+    "passport": "*",
+    "passport-vkontakte": "*",
     "gulp": "*",
     "gulp-angular-templatecache": "*",
     "gulp-browserify": "*",
