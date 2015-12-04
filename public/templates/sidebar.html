@@ -1,0 +1,15 @@
+<ul class="nav nav-sidebar file-tree-root">
+    <li ng-repeat="item in fileNavigator.history" ng-include="'folder-branch-item'"  ng-class="{'active':  (item.path == '/'?'/':item.path+item.name) == '/'+fileNavigator.currentPath.join('/')}"></li>
+</ul>
+
+<script type="text/ng-template" id="folder-branch-item">
+    <!--<i class="fa fa-plus-square-o"></i>-->
+    <a href="" ng-click="fileNavigator.folderClickSidebar(item)" class="animated fast fadeInDown" msl-dnd-folder-input="uploadFileList">
+        <i class="glyphicon glyphicon-folder-close mr2" ng-hide="(item.path+item.name == '//'?'/':item.path+item.name) == '/'+fileNavigator.currentPath.join('/')"></i>
+        <i class="glyphicon glyphicon-folder-open mr2"  ng-show="(item.path+item.name == '//'?'/':item.path+item.name) == '/'+fileNavigator.currentPath.join('/')"></i>
+        {{ item.name | strLimit : 24 }}
+    </a>
+    <ul class="nav nav-sidebar">
+        <li ng-repeat="item in item.nodes" ng-include="'folder-branch-item'" ng-class="{'active': (item.path+item.name == '//'?'/':item.path+item.name) == '/'+fileNavigator.currentPath.join('/')}"></li>
+    </ul>
+</script>

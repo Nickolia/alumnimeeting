@@ -1,0 +1,42 @@
+{
+  "name": "File_System_Node_JS",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "latest",
+    "lodash-node": "latest",
+    "request": "latest",
+    "socket.io": "latest",
+    "mongoose": "latest"
+  },
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "connect-livereload": "^0.5.3",
+    "method-override":"*",
+    "body-parser": "*",
+    "errorhandler": "*",
+    "promised-io": "*",
+    "async": "*",
+    "express-session": "*",
+    "multer": "*",
+    "morgan": "*",
+    "iconv": "*",
+    "bson-objectid": "*",
+    "cron": "*",
+    "cors": "*",
+    "gulp": "*",
+    "gulp-angular-templatecache": "*",
+    "gulp-browserify": "*",
+    "gulp-foreach": "*",
+    "gulp-clean": "*",
+    "gulp-concat": "*",
+    "gulp-embedlr": "*",
+    "gulp-jshint": "*",
+    "gulp-livereload": "*",
+    "gulp-uglify": "*",
+    "gulp-insert": "*",
+    "gulp-replace": "*",
+    "gulp-util": "*",
+    "tiny-lr": "*"
+  }
+}

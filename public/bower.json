@@ -1,0 +1,28 @@
+{
+  "name": "File_System_Node_JS",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-socket-io": "latest",
+    "angular-aria": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "animate.css": "latest",
+    "angular-filemanager": "latest",
+    "angular-translate": "latest",
+    "textAngular": "latest",
+    "downloadjs": "latest",
+    "angular-cookies": "~1.4.7",
+    "bootstrap": "latest",
+    "lodash": "latest",
+    "msl-angular-uploads": "latest"
+  },
+  "resolutions": {
+    "angular": "latest"
+  }
+}

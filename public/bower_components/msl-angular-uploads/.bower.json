@@ -1,0 +1,40 @@
+{
+  "name": "angular-uploads",
+  "homepage": "https://marcoliceti.github.io/angular-uploads/",
+  "authors": [
+    "marcoliceti <marco.liceti@gmail.com>"
+  ],
+  "description": "A bunch of AngularJS directives for beautiful upload UIs",
+  "keywords": [
+    "angular",
+    "upload",
+    "uploads"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "src",
+    "test",
+    "demo",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "karma-conf.js",
+    "package.json",
+    ".gitignore",
+    ".git",
+    ".npmignore"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4"
+  },
+  "version": "1.0.2",
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.2",
+    "commit": "b265324e353eab81ea9196e09b9b26eec416b2bf"
+  },
+  "_source": "git://github.com/marcoliceti/angular-uploads.git",
+  "_target": "*",
+  "_originalSource": "msl-angular-uploads"
+}
