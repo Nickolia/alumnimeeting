@@ -7,7 +7,6 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     multer = require('multer'),
     mongoose = require('mongoose'),
-    file_system = require('./filesystem/'),
     _ = require('lodash-node');
 
 var app = module.exports = express();
@@ -40,9 +39,6 @@ var init = function(){
     io = require('socket.io').listen(server);
 
     io.on('connection', Connect);
-
-    app.post('/filesystem', multer().any(), file_system);
-    app.get('/filesystem', multer().any(), file_system);
 
 };
 
