@@ -7,20 +7,17 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular": "~1.4.7",
+    "angular": "latest",
     "angular-socket-io": "latest",
-    "angular-aria": "~1.4.7",
-    "angular-sanitize": "~1.4.7",
-    "angular-route": "~1.4.7",
+    "angular-aria": "latest",
+    "angular-sanitize": "latest",
+    "angular-route": "latest",
     "animate.css": "latest",
-    "angular-filemanager": "latest",
     "angular-translate": "latest",
-    "textAngular": "latest",
-    "downloadjs": "latest",
-    "angular-cookies": "~1.4.7",
-    "bootstrap": "latest",
-    "lodash": "latest",
-    "msl-angular-uploads": "latest"
+    "angular-material": "latest",
+    "angular-material-icons": "latest",
+    "angular-cookies": "latest",
+    "lodash": "latest"
   },
   "resolutions": {
     "angular": "latest"

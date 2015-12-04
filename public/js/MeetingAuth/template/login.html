@@ -1,0 +1,15 @@
+<form>
+    <md-input-container>
+        <label for="email">Email</label>
+        <input type="text" id="email"
+               ng-model="login.email" md-autofocus>
+    </md-input-container>
+    <md-input-container>
+        <label for="password">Password</label>
+        <input type="text" id="password"
+               ng-model="login.password" md-autofocus>
+    </md-input-container>
+    <md-button class="md-icon-button" ng-click="sendLogin()" aria-label="More">
+        LOGIN
+    </md-button>
+</form>

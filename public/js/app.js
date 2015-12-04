@@ -1,32 +1,40 @@
-/*!
- * Angular FileManager v1.4.0 (https://github.com/joni2back/angular-filemanager)
- * Jonas Sciangula Street <joni2back@gmail.com>
- * Licensed under MIT (https://github.com/joni2back/angular-filemanager/blob/master/LICENSE)
- */
+'use strict';
 
-(function(window, angular, $) {
-    "use strict";
-    var app = angular.module('FileManagerApp', ['pascalprecht.translate', 'ngCookies','textAngular']);
+var app = angular.module('MeetingApp', [
+    'ngRoute',
+    'ngAria',
+    'ngAnimate',
+    'ngMaterial',
+    'ngMdIcons',
+    'ngSanitize',
+    'MeetingCore',
+    'MeetingIndex',
+    'MeetingAuth',
+    'MeetingSidebar',
+    'btford.socket-io'
 
-    /**
-     * jQuery inits
-     */
-    $(window.document).on('shown.bs.modal', '.modal', function() {
-        setTimeout(function() {
-            $('[autofocus]', this).focus();
-        }.bind(this), 100);
-    });
+])
+    .config(function ($routeProvider, $locationProvider) {
+      $routeProvider.
+        when('/', {
+          templateUrl: 'index.html',
+          controller: 'Index'
+        }).
+        otherwise({
+          redirectTo: '/'
+        });
 
-    $(window.document).on('click', function() {
-        $("#context-menu").hide();
-    });
-
-    $(window.document).on('contextmenu', '.main-navigation .table-files td, .iconset a.thumbnail', function(e) {
-        $("#context-menu").hide().css({
-            left: e.pageX,
-            top: e.pageY
-        }).show();
-        e.preventDefault();
-    });
-
-})(window, angular, jQuery);
+        $locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('!');
+    })
+    .run(function($rootScope, $templateCache) {
+        $rootScope.$on('$routeChangeStart', function(event, next, current) {
+            if (typeof(current) !== 'undefined'){
+                $templateCache.remove(current.templateUrl);
+            }
+        });
+    })
+    /*.config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .dark();
+    })*/;

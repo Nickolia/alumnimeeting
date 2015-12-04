@@ -1,43 +1,60 @@
 <!DOCTYPE html>
-<html ng-app="FileManagerApp">
+<html ng-app="MeetingApp">
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="fragment" content="!" />
     <base href="/">
-    <title>FileManager</title>
-    <link rel='stylesheet' href='css/angular-filemanager.css'/>
-    <link rel="stylesheet" href="bower_components/bootswatch/paper/bootstrap.min.css" />
-    <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
-    <link rel='stylesheet' href='bower_components/font-awesome/css/font-awesome.min.css'>
+    <title>AlumniMeeting</title>
+    <link rel='stylesheet' href='css/style.css'/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <meta name="viewport" content="initial-scale=1" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
 </head>
 <body>
+        <md-content>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <ng-md-icon icon="menu"></ng-md-icon>
+                    </md-button>
+                    <h2>
+                        <span>Toolbar with Icon Buttons</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="More">
+                        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+        </md-content>
 
 
-    <angular-filemanager></angular-filemanager>
 
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-translate/angular-translate.min.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/lodash/lodash.min.js"></script>
-    <script src="bower_components/downloadjs/download.js"></script>
-    <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
-    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
-    <script src='bower_components/textAngular/dist/textAngular.min.js'></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-socket-io/socket.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
+
+    <script type="text/javascript" src="js/MeetingCore/build.js"></script>
+
+    <script type="text/javascript" src="js/MeetingAuth/build.js"></script>
+
+    <script type="text/javascript" src="js/MeetingSidebar/build.js"></script>
+
+    <script type="text/javascript" src="js/MeetingIndex/build.js"></script>
+
+
+
+
     <script src="js/app.js"></script>
-    <script src="js/directives/directives.js"></script>
-    <script src="js/filters/filters.js"></script>
-    <script src="js/providers/config.js"></script>
-    <script src="js/entities/chmod.js"></script>
-    <script src="js/entities/item.js"></script>
-    <script src="js/services/filenavigator.js"></script>
-    <script src="js/services/fileuploader.js"></script>
-    <script src="js/providers/translations.js"></script>
-    <script src="js/controllers/main.js"></script>
-    <script src="js/controllers/selector-controller.js"></script>
 
 </body>
 </html>
