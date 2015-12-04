@@ -1,6 +1,6 @@
 var passport = require('passport'),
     AuthVKStrategy = require('passport-vkontakte').Strategy,
-    Profile = require('./profile'),
+    Profile = require('./profile_models'),
     defer = require("promised-io/promise").Deferred,
     _ = require('lodash-node'),
     async = require('async');
