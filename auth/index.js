@@ -15,8 +15,8 @@ passport.use('vkontakte', new AuthVKStrategy({
             if (err) throw err;
             if (!profiles_data){
                 var newProfile = new Profile({
-                    firstName: profiles_data.givenName,
-                    lastName: profiles_data.familyName,
+                    firstName: profiles_data.name.givenName,
+                    lastName: profiles_data.name.familyName,
                     userId: profiles_data.id,
                     photoUrl: profiles_data.photos[0].value,
                     profileUrl: profiles_data.profileUrl
