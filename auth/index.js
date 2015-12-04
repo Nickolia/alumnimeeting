@@ -7,7 +7,7 @@ passport.use('vk', new AuthVKStrategy({
         callbackURL:  "http://5.101.117.224:4300/auth/vkontakte/callback"
     },
     function (accessToken, refreshToken, profile, done) {
-
+        console.log(profile);
         return done(null, {
             username: profile.displayName,
             photoUrl: profile.photos[0].value,
