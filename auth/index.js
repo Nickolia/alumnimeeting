@@ -1,7 +1,7 @@
 var passport = require('passport');
 var AuthVKStrategy = require('passport-vkontakte').Strategy;
 
-passport.use('vk', new AuthVKStrategy({
+passport.use('vkontakte', new AuthVKStrategy({
         clientID:     "5174787",
         clientSecret: "O0RcVhXduMn0tgVj4DAJ",
         callbackURL:  "http://5.101.117.224:4300/auth/vkontakte/callback"
