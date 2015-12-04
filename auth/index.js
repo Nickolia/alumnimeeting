@@ -1,5 +1,9 @@
-var passport = require('passport');
-var AuthVKStrategy = require('passport-vkontakte').Strategy;
+var passport = require('passport'),
+    AuthVKStrategy = require('passport-vkontakte').Strategy,
+    Profile = require('./profile'),
+    defer = require("promised-io/promise").Deferred,
+    _ = require('lodash-node'),
+    async = require('async');
 
 passport.use('vkontakte', new AuthVKStrategy({
         clientID:     "5174787",
@@ -7,12 +11,23 @@ passport.use('vkontakte', new AuthVKStrategy({
         callbackURL:  "http://5.101.117.224:4300/auth/vkontakte/callback"
     },
     function (accessToken, refreshToken, profile, done) {
-        console.log(profile);
-        return done(null, {
-            userName: profile.displayName,
-            //userId: profile.displayName,
-            photoUrl: profile.photos[0].value,
-            profileUrl: profile.profileUrl
+        Profile.findOne({userId: profile.id}, function(err, profiles_data) {
+            if (err) throw err;
+            if (!profiles_data){
+                var newProfile = new Profile({
+                    firstName: profiles_data.givenName,
+                    lastName: profiles_data.familyName,
+                    userId: profiles_data.id,
+                    photoUrl: profiles_data.photos[0].value,
+                    profileUrl: profiles_data.profileUrl
+                });
+                newProfile.save(function(err,profiles) {
+                    if (err) throw err;
+                    return done(null, profiles);
+                });
+            } else {
+                return done(null, profiles_data);
+            }
         });
     }
 ));
