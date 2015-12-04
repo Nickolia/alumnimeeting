@@ -8,7 +8,7 @@ var express = require('express'),
     multer = require('multer'),
     mongoose = require('mongoose'),
     passport = require('passport'),
-    VKontakteStrategy = require('passport-vkontakte').Strategy,
+    auth = require('./auth'),
     _ = require('lodash-node');
 
 var app = module.exports = express();
@@ -28,18 +28,6 @@ mongoose.connect('mongodb://localhost:27017/alumnimeeting', function (error) {
         console.log(error);
     }
 });
-
-passport.use(new VKontakteStrategy({
-        clientID:     "5174787",
-        clientSecret: "O0RcVhXduMn0tgVj4DAJ",
-        callbackURL:  "http://5.101.117.224:4300/auth/vkontakte/callback"
-    },
-    function(accessToken, refreshToken, profile, done) {
-        User.findOrCreate({ vkontakteId: profile.id }, function (err, user) {
-            return done(err, user);
-        });
-    }
-));
 
 var init = function(){
     app.all(allowCrossDomain);
